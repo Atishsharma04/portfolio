@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atish Sharma — Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- BOOT -->
+<div id="boot">
+  <canvas id="matrixCanvas"></canvas>
+  <div class="boot-shell">
+    <div class="boot-titlebar">
+      <div class="tbar-dots">
+        <div class="tbar-dot"></div><div class="tbar-dot"></div><div class="tbar-dot"></div>
+      </div>
+      <div class="tbar-title">atish@portfolio — zsh — 120×36</div>
+    </div>
+    <div class="boot-body" id="bootLog"></div>
+    <div class="boot-footer">
+      <div class="boot-prompt-line">
+        <span style="color:var(--muted)">atish@</span><span class="p">portfolio</span>
+        <span style="color:var(--muted)">:~$</span>&nbsp;
+        <span id="bootTyped"></span><span style="display:inline-block;width:8px;height:13px;background:var(--green);animation:curBlink .9s step-end infinite;vertical-align:middle"></span>
+      </div>
+      <div class="boot-pbar-wrap">
+        <span id="bootPct">0%</span>
+        <div class="boot-pbar"><div class="boot-pbar-fill" id="bootFill"></div></div>
+        <span>INITIALIZING</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CURSOR -->
+<div class="cur-dot" id="curDot"></div>
+<div class="cur-ring" id="curRing"></div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-logo">
+    <span class="dim">~/</span>atish_sharma<span class="nb"></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#about">about</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+  <div class="nav-right"><div class="pdot"></div><span>open to work</span></div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">full-stack developer &amp; ai/ml engineer</div>
+    <h1 class="hero-name">
+      <span class="l1">ATISH</span>
+      <span class="l2" data-text="SHARMA">SHARMA</span>
+    </h1>
+    <div class="hero-role">B.Tech CSE · JNGEC Mandi · Class of 2026</div>
+    <p class="hero-desc">
+      Building scalable, intelligent applications at the intersection of full-stack development and AI/ML. 
+      I care about clean systems, good abstractions, and software that actually works.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-solid"><span>▶</span> view_projects()</a>
+      <a href="#contact" class="btn btn-ghost"><span>✉</span> get_in_touch()</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="term-win">
+      <div class="term-bar">
+        <div class="tdots"><div class="tdot"></div><div class="tdot"></div><div class="tdot"></div></div>
+        <div class="term-bar-title">bash — atish@portfolio:~</div>
+      </div>
+      <div class="term-body">
+        <div class="tl trev t01"><span class="tp"><span class="h">atish</span><span class="s">@</span><span class="p">portfolio</span> ~$&nbsp;</span><span class="tc">cat about.txt</span></div>
+        <span class="to g trev t02">Name    : Atish Sharma</span>
+        <span class="to g trev t03">Role    : Dev + ML Engineer</span>
+        <span class="to g trev t04">Status  : <span style="color:var(--green)">● available now</span></span>
+        <span class="to d trev t05">&nbsp;</span>
+        <div class="tl trev t06"><span class="tp"><span class="h">atish</span><span class="s">@</span><span class="p">portfolio</span> ~$&nbsp;</span><span class="tc">ls skills/</span></div>
+        <span class="to c trev t07">Python&nbsp;&nbsp;&nbsp;HTML&nbsp;&nbsp;&nbsp;&nbsp;CSS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JavaScript</span>
+        <span class="to c trev t08">React.js Next.js Express  MySQL</span>
+        <span class="to d trev t09">&nbsp;</span>
+        <div class="tl trev t10"><span class="tp"><span class="h">atish</span><span class="s">@</span><span class="p">portfolio</span> ~$&nbsp;</span><span class="tc">git log --oneline</span></div>
+        <span class="to trev t11"><span class="a">7f3a91c</span> feat(ml): spam detection — 98.2% acc</span>
+        <span class="to trev t12"><span class="a">2d8e44b</span> feat(ml): house price predictor</span>
+        <span class="to trev t13"><span class="a">5c1b90f</span> feat(ai): audio dsp + speech pipeline</span>
+        <span class="to d trev t14">&nbsp;</span>
+        <div class="tl trev t15"><span class="tp"><span class="h">atish</span><span class="s">@</span><span class="p">portfolio</span> ~$&nbsp;</span><span class="tblink"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-bar">
+    <div class="hbar-item"><div class="hbar-val">3+</div><div class="hbar-key">// projects</div></div>
+    <div class="hbar-item"><div class="hbar-val">8</div><div class="hbar-key">// technologies</div></div>
+    <div class="hbar-item"><div class="hbar-val">'26</div><div class="hbar-key">// grad year</div></div>
+    <div class="hbar-item"><div class="hbar-val">∞</div><div class="hbar-key">// curiosity</div></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-head reveal">
+    <span class="sec-num">01</span>
+    <div class="sec-label">
+      <h2 class="sec-title">Tech Stack</h2>
+      <div class="sec-comment">// languages, frameworks &amp; tools</div>
+    </div>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="sk-card reveal rd1"><div class="sk-top"><span class="sk-icon">🐍</span><span class="sk-pct">80%</span></div><div class="sk-name">Python</div><div class="sk-bar-wrap"><div class="sk-bar-fill" data-w="80"></div></div></div>
+    <div class="sk-card reveal rd2"><div class="sk-top"><span class="sk-icon">🌐</span><span class="sk-pct">95%</span></div><div class="sk-name">HTML</div><div class="sk-bar-wrap"><div class="sk-bar-fill" data-w="95"></div></div></div>
+    <div class="sk-card reveal rd3"><div class="sk-top"><span class="sk-icon">🎨</span><span class="sk-pct">85%</span></div><div class="sk-name">CSS</div><div class="sk-bar-wrap"><div class="sk-bar-fill" data-w="85"></div></div></div>
+    <div class="sk-card reveal rd4"><div class="sk-top"><span class="sk-icon">⚡</span><span class="sk-pct">70%</span></div><div class="sk-name">JavaScript</div><div class="sk-bar-wrap"><div class="sk-bar-fill" data-w="70"></div></div></div>
+    <div class="sk-card reveal rd1"><div class="sk-top"><span class="sk-icon">🚀</span><span class="sk-pct">70%</span></div><div class="sk-name">Express.js</div><div class="sk-bar-wrap"><div class="sk-bar-fill" data-w="70"></div></div></div>
+    <div class="sk-card reveal rd2"><div class="sk-top"><span class="sk-icon">▲</span><span class="sk-pct">72%</span></div><div class="sk-name">Next.js</div><div class="sk-bar-wrap"><div class="sk-bar-fill" data-w="72"></div></div></div>
+    <div class="sk-card reveal rd3"><div class="sk-top"><span class="sk-icon">⚛️</span><span class="sk-pct">75%</span></div><div class="sk-name">React.js</div><div class="sk-bar-wrap"><div class="sk-bar-fill" data-w="75"></div></div></div>
+    <div class="sk-card reveal rd4"><div class="sk-top"><span class="sk-icon">🗄️</span><span class="sk-pct">78%</span></div><div class="sk-name">MySQL</div><div class="sk-bar-wrap"><div class="sk-bar-fill" data-w="78"></div></div></div>
+  </div>
+  <div class="reveal" style="margin-top:20px">
+    <div class="also-title">// also familiar with</div>
+    <div class="also-tags">
+      <span class="also-tag">scikit-learn</span><span class="also-tag">pandas</span><span class="also-tag">numpy</span>
+      <span class="also-tag">matplotlib</span><span class="also-tag">git</span><span class="also-tag">REST APIs</span>
+      <span class="also-tag">audio DSP</span><span class="also-tag">NLP</span><span class="also-tag">linux</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-head reveal">
+    <span class="sec-num">02</span>
+    <div class="sec-label">
+      <h2 class="sec-title">Projects</h2>
+      <div class="sec-comment">// selected work — ai, ml &amp; full-stack</div>
+    </div>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="proj-grid">
+    <div class="proj-card reveal rd1">
+      <div class="proj-top">
+        <span class="proj-folder">📁</span>
+        <div class="proj-links-row"><a href="https://github.com/Atishsharma04" target="_blank" class="proj-lnk">↗ code</a></div>
+      </div>
+      <div class="proj-cat">AI · Machine Learning</div>
+      <div class="proj-title">Spam Detection System</div>
+      <div class="proj-desc">ML classifier distinguishing spam from legitimate messages with 98%+ accuracy. Implements NLP preprocessing pipelines, TF-IDF feature extraction, and ensemble classifier tuning.</div>
+      <div class="proj-tags">
+        <span class="proj-tag">Python</span><span class="proj-tag">NLP</span><span class="proj-tag">Scikit-learn</span><span class="proj-tag">Pandas</span>
+      </div>
+      <div class="proj-num">01</div>
+    </div>
+    <div class="proj-card reveal rd2">
+      <div class="proj-top">
+        <span class="proj-folder">📁</span>
+        <div class="proj-links-row"><a href="https://github.com/Atishsharma04" target="_blank" class="proj-lnk">↗ code</a></div>
+      </div>
+      <div class="proj-cat">Data Science · ML</div>
+      <div class="proj-title">House Price Predictor</div>
+      <div class="proj-desc">Regression model estimating real-estate prices based on location, size and 15+ features. Full pipeline from data cleaning through model evaluation and visualisation dashboards.</div>
+      <div class="proj-tags">
+        <span class="proj-tag">Python</span><span class="proj-tag">Regression</span><span class="proj-tag">Pandas</span><span class="proj-tag">Matplotlib</span>
+      </div>
+      <div class="proj-num">02</div>
+    </div>
+    <div class="proj-card reveal rd3">
+      <div class="proj-top">
+        <span class="proj-folder">📁</span>
+        <div class="proj-links-row"><a href="https://github.com/Atishsharma04" target="_blank" class="proj-lnk">↗ code</a></div>
+      </div>
+      <div class="proj-cat">AI · Audio Engineering</div>
+      <div class="proj-title">Audio Pipeline</div>
+      <div class="proj-desc">End-to-end audio processing system — raw signal preprocessing, spectral feature extraction (MFCCs, FFT), and integration with speech recognition backends for real-time transcription.</div>
+      <div class="proj-tags">
+        <span class="proj-tag">Python</span><span class="proj-tag">Audio DSP</span><span class="proj-tag">Speech Rec.</span><span class="proj-tag">AI</span>
+      </div>
+      <div class="proj-num">03</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-head reveal">
+    <span class="sec-num">03</span>
+    <div class="sec-label">
+      <h2 class="sec-title">About Me</h2>
+      <div class="sec-comment">// the human behind the keyboard</div>
+    </div>
+    <div class="sec-rule"></div>
+  </div>
+  <div class="about-layout">
+    <div class="about-me reveal">
+      <div class="about-tag">// bio.txt</div>
+      <div class="about-name">Atish Sharma</div>
+      <p class="about-para">I'm a <em>Computer Science student</em> at JNGEC Mandi building software that's fast, reliable, and solves real problems. My work spans <strong>full-stack web development</strong> and <strong>AI/ML engineering</strong> — I like understanding the full picture, not just one layer.</p>
+      <p class="about-para">I got into AI because I wanted to understand what machines can actually learn from data — not just call an API. Every project I build, I'm thinking about the system design, edge cases, and what happens at scale.</p>
+      <p class="about-para">When I'm not coding I'm reading about distributed systems, trying to break my own code, or pushing my LeetCode streak. <em>I write clean code, document it properly, and ship things that work.</em></p>
+      <div class="about-chips">
+        <span class="about-chip green">● available for internships</span>
+        <span class="about-chip">clean code advocate</span>
+        <span class="about-chip">system design nerd</span>
+        <span class="about-chip">ml curious</span>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="edu-card reveal rd2">
+        <div class="edu-label">// education.json</div>
+        <div class="edu-title">Education</div>
+        <div class="edu-row"><span class="edu-k">degree</span><span class="edu-v">B.Tech — Computer Science</span></div>
+        <div class="edu-row"><span class="edu-k">institute</span><span class="edu-v">JNGEC Mandi, HP</span></div>
+        <div class="edu-row"><span class="edu-k">duration</span><span class="edu-v">2022 — 2026</span></div>
+        <div class="edu-row"><span class="edu-k">status</span><span class="edu-v live">currently pursuing</span></div>
+        <div class="edu-row"><span class="edu-k">leetcode</span><span class="edu-v"><a href="https://leetcode.com/u/atishsharma04" target="_blank" style="color:var(--amber);text-decoration:none">@atishsharma04 ↗</a></span></div>
+        <div class="edu-row"><span class="edu-k">github</span><span class="edu-v"><a href="https://github.com/Atishsharma04" target="_blank" style="color:var(--cyan);text-decoration:none">@Atishsharma04 ↗</a></span></div>
+      </div>
+      <div class="stat-row reveal rd3">
+        <div class="stat-box"><div class="stat-val">3+</div><div class="stat-key">projects</div></div>
+        <div class="stat-box"><div class="stat-val">8</div><div class="stat-key">skills</div></div>
+        <div class="stat-box"><div class="stat-val">2026</div><div class="stat-key">grad</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-bg" id="contactBg"></div>
+  <div class="contact-inner reveal">
+    <div class="contact-pre">open to work — let's connect</div>
+    <h2 class="contact-h">
+      <span class="outline">LET'S</span><br>
+      <span class="green">BUILD.</span>
+    </h2>
+    <p class="contact-sub">Looking for internships, collaborations, or interesting problems. I move fast and reply faster.</p>
+    <div class="contact-grid">
+      <a href="mailto:atisharma112004@gmail.com" class="c-btn"><span>✉</span><span>atisharma112004@gmail.com</span></a>
+      <a href="https://github.com/Atishsharma04" target="_blank" class="c-btn"><span>⌥</span><span>GitHub / Atishsharma04</span></a>
+      <a href="https://instagram.com/atish4144" target="_blank" class="c-btn"><span>◈</span><span>Instagram / atish4144</span></a>
+      <a href="https://www.linkedin.com/in/atish-sharma-8946a7356" target="_blank" class="c-btn"><span>in</span><span>LinkedIn / atish-sharma</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="dev3d-wrapper">
+
+<div class="dev3d-card" id="devCard">
+
+<div class="card-inner">
+
+<!-- FRONT SIDE -->
+<div class="card-front">
+
+<div class="dev3d-header">
+<div class="dev3d-dots">
+<span></span><span></span><span></span>
+</div>
+<div class="dev3d-title">terminal.sh</div>
+</div>
+
+<div class="dev3d-body">
+
+<img src="download (3).jpg" class="dev3d-avatar">
+
+<div class="dev3d-name">Atish Sharma</div>
+
+<div class="dev3d-terminal">
+<span class="prompt">atish@dev:~$</span>
+<span id="terminalText"></span>
+<span class="blink"></span>
+</div>
+
+<div class="dev3d-buttons">
+<a href="#projects" class="dev3d-btn">Projects</a>
+<a href="https://github.com/Atishsharma04" target="_blank" class="dev3d-btn outline">GitHub</a>
+</div>
+
+</div>
+</div>
+
+
+<!-- BACK SIDE -->
+<div class="card-back">
+
+<img src="backpic.jpg" class="back-photo">
+
+<div class="back-text">
+sudo access --granted
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<!-- 3D Developer Card -->
+<!-- <div class="dev3d-wrapper">
+  <div class="dev3d-card" id="devCard">
+
+    <div class="dev3d-header">
+      <div class="dev3d-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="dev3d-title">terminal.sh</div>
+    </div>
+
+    <div class="dev3d-body"> -->
+
+      <!-- use real image -->
+      <!-- <img src="https://avatars.githubusercontent.com/u/583231?v=4" class="dev3d-avatar">
+
+      <div class="dev3d-name">Atish Sharma</div>
+
+      <div class="dev3d-terminal">
+        <span class="prompt">atish@dev:~$</span>
+        <span id="terminalText"></span>
+        <span class="blink"></span>
+      </div>
+
+      <div class="dev3d-buttons">
+        <a href="#projects" class="dev3d-btn">Projects</a>
+        <a href="https://github.com/Atishsharma04" target="_blank" class="dev3d-btn outline">GitHub</a>
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+<footer>
+  <div class="footer-logo">atish_sharma</div>
+  <div>JNGEC Mandi · B.Tech CSE · 2026</div>
+  <div>// built by atish sharma</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
